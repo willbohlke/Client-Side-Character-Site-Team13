@@ -1,4 +1,4 @@
-class PageModel {
+class PageModel {   //XMLHttpRequests
     GetData() {
         // ...
         return data;
@@ -6,7 +6,7 @@ class PageModel {
 
 }
 
-class PageView {
+class PageView {    //Template Code
     CreateDivs(data) {
         // ...
         let root = document.querySelector('#root');
@@ -16,7 +16,7 @@ class PageView {
 
 
 
-class PageController {
+class PageController {  //Event Listeners (In Asynchronous Code)
     constructor(pageModel, pageView) {
         this.pageModel = pageModel;
         this.pageView = pageView;
