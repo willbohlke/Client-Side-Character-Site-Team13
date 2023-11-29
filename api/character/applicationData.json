@@ -1,5 +1,5 @@
 [
-    {"index": 0, "url": "/spongebob", "name": "SpongeBob SquarePants", "desc": "SpongeBob is the main character of the show. He has a very child-like personality.", "image":"/spongebob.png"},
-    {"index": 1, "url": "/patrick", "name": "Patrick Star", "desc": "Patrick is the comic relief character of the show. He is SpongeBob's best friend.", "image":"/patrick.png"},
-    {"index": 2, "url": "/squidward", "name": "Squidward Tentacles", "desc": "Squidward is the foil for Spongebob. He is very pessimistic by comparison.", "image":"/squidward.png"}
+    {"id": 0, "url": "/spongebob", "name": "SpongeBob SquarePants", "desc": "SpongeBob is the main character of the show. He has a very child-like personality.", "image":"/spongebob.png"},
+    {"id": 1, "url": "/patrick", "name": "Patrick Star", "desc": "Patrick is the comic relief character of the show. He is SpongeBob's best friend.", "image":"/patrick.png"},
+    {"id": 2, "url": "/squidward", "name": "Squidward Tentacles", "desc": "Squidward is the foil for Spongebob. He is very pessimistic by comparison.", "image":"/squidward.png"}
 ]
