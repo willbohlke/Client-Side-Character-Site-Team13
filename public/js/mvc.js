@@ -1,6 +1,18 @@
 class PageModel {   //XMLHttpRequests
-    GetData() {
+    GetData(id) {
         // ...
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                data = JSON.parse(this.responseText);
+            }
+        }
+        let url = `/api/character/${id}`;
+        xhttp.open("GET", url, true);
+        xhttp.setRequestHeader("Accept", "api/character");
+        xhttp.send();
+        
+
         return data;
     }
 
@@ -9,8 +21,12 @@ class PageModel {   //XMLHttpRequests
 class PageView {    //Template Code
     CreateDivs(data) {
         // ...
-        let root = document.querySelector('#root');
-        root.innerHTML = template;
+        let content = document.querySelector('#content');
+        content.innerHTML = `
+            <h2>${data.name}</h2>
+            <p>${data.desc}</p>
+            <img src="${data.image}" alt="${data.name}">
+        `;
     }
 }
 

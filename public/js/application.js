@@ -1,26 +1,45 @@
-let xhttp = new XMLHttpRequest();
-xhttp.open("GET", "/api/character", false);
-xhttp.send();
-var json = JSON.parse(xhttp.responseText);
+//client requires the character data, use XMLHttpRequest to get /character
+//GET /character is a REST API call accessed by the application router
+//what am i gonna add to header
+//loop through characters to get clickable buttons
+
+function handleButtonClick(id) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState === 4 && xhttp.status === 200) {
+            json = JSON.parse(xhttp.responseText);
+
+            character = json[id];
+            changeContent(character);
+        }
+    };
+    xhttp.open("GET", "/api/character/", true);
+    xhttp.send();
+}
 
 function changeContent(character) {
-    var content = document.querySelector('#content');
-    content.innerHTML = `
+    let element = document.querySelector('#content');
+    element.innerHTML = `
         <h2>${character.name}</h2>
         <p>${character.desc}</p>
         <img src="${character.image}" alt="${character.name}">
-    `;
+    `
 }
 
 function createButtons() {
-    if (xhttp.status == 200) {
-        var top = document.querySelector('#top');
-        for (var i = 0; i < json.length; i++) {
-            var button = document.createElement('button');
-            let character = json[i];
-            button.onclick = function() { changeContent(character) };
-            button.textContent = json[i].name;
-            top.appendChild(button);
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState === 4 && xhttp.status === 200) {
+            var json = JSON.parse(xhttp.responseText);
+            for (var i = 0; i < json.length; i++) {
+                var button = document.createElement("button");
+                button.textContent = json[i].name;
+                button.setAttribute("onclick", `handleButtonClick(${i})`);
+                document.querySelector("#top").appendChild(button);
+            }
+            
         }
-    }
+    };
+    xhttp.open("GET", "/api/character", true);
+    xhttp.send();
 }
