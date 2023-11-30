@@ -23,7 +23,7 @@ function changeContent(character) {
         <h2>${character.name}</h2>
         <p>${character.desc}</p>
         <img src="${character.image}" alt="${character.name}">
-    `
+    `;
 }
 
 function createButtons() {
@@ -32,10 +32,12 @@ function createButtons() {
         if (xhttp.readyState === 4 && xhttp.status === 200) {
             var json = JSON.parse(xhttp.responseText);
             for (var i = 0; i < json.length; i++) {
-                var button = document.createElement("button");
-                button.textContent = json[i].name;
-                button.setAttribute("onclick", `handleButtonClick(${i})`);
-                document.querySelector("#top").appendChild(button);
+                var card = document.createElement("div");
+                card.setAttribute("class", "card");
+                card.setAttribute("style", "width: 18rem;");
+                card.textContent = json[i].name;
+                //button.setAttribute("onclick", `handleButtonClick(${i})`);
+                document.querySelector('.container').appendChild(card);
             }
             
         }
