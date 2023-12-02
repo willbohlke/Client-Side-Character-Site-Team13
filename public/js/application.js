@@ -42,25 +42,23 @@ function handleButtonClick(id) {
     xhttp.send();
 }
 
-function changeContent(character) {
-    let element = document.createElement('div');
-    element.innerHTML = `
-        <h2>${character.name}</h2>
-        <p>${character.desc}</p>
-        <img src="${character.image}" alt="${character.name}">
-    `;
-}
 
 function createButtons() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (xhttp.readyState === 4 && xhttp.status === 200) {
             var json = JSON.parse(xhttp.responseText);
+            var row = document.createElement("div");
+            document.querySelector('.container').appendChild(row);
+            row.setAttribute("class", "row");
             for (var i = 0; i < json.length; i++) {
+                var c = 0;
+
+                
                 var card = document.createElement("div");
                 var img = document.createElement("img");
-
-                document.querySelector('.container').appendChild(card);
+            
+                document.querySelector('.row').appendChild(card);
                 card.setAttribute("class", "card");
                 card.setAttribute("style", "width: 18rem;");
                 
