@@ -77,3 +77,62 @@ function createButtons() {
     xhttp.open("GET", "/api/character", true);
     xhttp.send();
 }
+
+//Filters Section
+function updateCharacterCards(filter) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState === 4 && xhttp.status === 200) {
+            var json = JSON.parse(xhttp.responseText);
+            var characterCards = document.getElementById('characterCards');
+            characterCards.innerHTML = '';
+
+            for (var i = 0; i < json.length; i++) {
+                // Apply filtering logic based on the selected filter
+                if (filter === 'all' || json[i].universe === filter) {
+                    var card = createCard(json[i]);
+                    characterCards.appendChild(card);
+                }
+            }
+        }
+    };
+
+    xhttp.open("GET", "/api/character", true);
+    xhttp.send();
+}
+
+function createCard(character) {
+    var card = document.createElement("div");
+    var img = document.createElement("img");
+
+    card.setAttribute("class", "card");
+    card.setAttribute("style", "width: 18rem;");
+    
+    img.setAttribute("class", "card-img-top");
+    img.setAttribute("src", character.image);
+
+    card.textContent = character.name;
+
+    card.appendChild(img);
+    card.setAttribute("onclick", `handleButtonClick(${character.id})`);
+
+    return card;
+}
+
+function createButtons() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState === 4 && xhttp.status === 200) {
+            var json = JSON.parse(xhttp.responseText);
+            var characterCards = document.getElementById('characterCards');
+
+            for (var i = 0; i < json.length; i++) {
+                var card = createCard(json[i]);
+                characterCards.appendChild(card);
+            }
+        }
+    };
+
+    xhttp.open("GET", "/api/character", true);
+    xhttp.send();
+}
