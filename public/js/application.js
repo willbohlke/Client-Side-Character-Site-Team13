@@ -1,8 +1,3 @@
-//client requires the character data, use XMLHttpRequest to get /character
-//GET /character is a REST API call accessed by the application router
-//what am i gonna add to header
-//loop through characters to get clickable buttons
-
 function handleButtonClick(id) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -24,7 +19,7 @@ function createModal(character) {
     modal.setAttribute('aria-labelledby', 'characterModalLabel');
     modal.setAttribute('aria-hidden', 'true');
     modal.innerHTML = `
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered" style="transform: translate(0, -35%);">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="characterModalLabel">${character.name}</h5>
@@ -77,10 +72,11 @@ function createCard(character) {  // Evan modified the createCard function a lit
     
 
     card.setAttribute("class", "card");
-    card.setAttribute("style", "width: 18rem; margin: 10px; border-radius: 15px; border: 1px solid gray; box-shadow: 5px 5px 5px gray");
+    card.setAttribute("style", "width: 18rem; margin: 10px; border-radius: 15px; border: 1px solid gray; box-shadow: 5px 5px 5px gray; background-color: solid white;");
     
     img.setAttribute("class", "card-img-top");
     img.setAttribute("src", character.image);
+    img.setAttribute("style", "border-radius: 15px;");
 
     //section for heart icon
     var heartIcon = document.createElement("img");

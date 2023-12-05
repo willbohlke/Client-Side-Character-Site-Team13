@@ -20,5 +20,11 @@
     filter: brightness(0) saturate(100%) invert(67%) sepia(92%) saturate(309%) hue-rotate(2deg) brightness(103%) contrast(101%);
 }
 
+body {
+    background-color: lightgray;
+}
 
-
+.card:hover {
+    transform: scale(1.05);
+    transition: transform .2s;
+}
