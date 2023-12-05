@@ -1,7 +1,7 @@
 [
     {"id": 0, "url": "/spongebob", "name": "SpongeBob SquarePants", "desc": "SpongeBob is the main character of the show. He has a very child-like personality.", "image":"/spongebob.png"},
     {"id": 1, "url": "/patrick", "name": "Patrick Star", "desc": "Patrick is the comic relief character of the show. He is SpongeBob's best friend.", "image":"/patrick.png"},
-    {"id": 2, "url": "/squidward", "name": "Squidward Tentacles", "desc": "Squidward is the foil for Spongebob. He is very pessimistic by comparison.", "image":"/squidward.png"},
+    {"id": 2, "url": "/squidward", "name": "Squidward Tentacles", "desc": "Squidward is the foil for Spongebob. He is very pessimistic by comparison.", "image":"/squid.png"},
     {"id": 3, "url": "/Peter", "name": "SpiderMan (Peter)", "desc": "Peter Parker, also known as Spider-Man, is a young, brilliant scientist and photographer from New York City. After being bitten by a radioactive spider, he gained incredible superpower.", "image":"/Peter.jpg"},
     {"id": 4, "url": "/Miles", "name": "SpiderMan (Miles)", "desc": "Miles Morales is another Spider-Man from New York City. He possesses powers similar to Peter Parker's, having been bitten by a genetically-altered spider.", "image":"/Miles.jpg"},
     {"id": 5, "url": "/Venom", "name": "Venom", "desc": "Venom is an alien. The symbiote grants superhuman strength, agility, and the ability to generate web-like tendrils. However, it often influences its host's behavior, resulting in an anti-hero or villainous persona.", "image":"/venom.jpg"},

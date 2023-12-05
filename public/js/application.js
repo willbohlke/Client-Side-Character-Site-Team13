@@ -72,10 +72,12 @@ function updateCharacterCards(filter) {
 function createCard(character) {  // Evan modified the createCard function a little bit to include the heart icon for the favorites button
     var card = document.createElement("div");
     var img = document.createElement("img");
+    var cardBody = document.createElement("div");
+    var cardTitle = document.createElement("h5");
     
 
     card.setAttribute("class", "card");
-    card.setAttribute("style", "width: 18rem; position: relative;");
+    card.setAttribute("style", "width: 18rem; margin: 10px; border-radius: 15px; border: 1px solid gray; box-shadow: 5px 5px 5px gray");
     
     img.setAttribute("class", "card-img-top");
     img.setAttribute("src", character.image);
@@ -96,15 +98,17 @@ function createCard(character) {  // Evan modified the createCard function a lit
     heartIcon.onclick = function(event) {
         event.stopPropagation();
         toggleFavorite(character.id, heartIcon);
-    };;
+    };
 
-    var textContainer = document.createElement("div");
-    textContainer.textContent = character.name;
-    textContainer.setAttribute("class", "card-body"); 
+    cardBody.setAttribute("class", "card-body");
+    cardTitle.setAttribute("class", "card-title text-center");
+    cardTitle.setAttribute("style", "font-family: 'Helvetica', sans-serif; font-weight: bold;");
+    cardTitle.textContent = character.name;
 
-    card.appendChild(img);
-    card.appendChild(textContainer); 
-    card.appendChild(heartIcon); 
+    cardBody.appendChild(cardTitle);
+    cardBody.appendChild(img);
+    card.appendChild(cardBody);
+    card.appendChild(heartIcon);
 
     card.setAttribute("onclick", `handleButtonClick(${character.id})`);
 
