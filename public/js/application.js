@@ -7,41 +7,44 @@ function handleButtonClick(id) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (xhttp.readyState === 4 && xhttp.status === 200) {
-            json = JSON.parse(xhttp.responseText);
-            character = json[id];
-
-            var modal = document.createElement('div');
-            modal.setAttribute('class', 'modal fade');
-            modal.setAttribute('id', 'characterModal');
-            modal.setAttribute('tabindex', '-1');
-            modal.setAttribute('aria-labelledby', 'characterModalLabel');
-            modal.setAttribute('aria-hidden', 'true');
-            modal.innerHTML = `
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="characterModalLabel">${character.name}</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            ${character.desc}
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-            document.querySelector('.container').appendChild(modal);
-
-            var myModal = new bootstrap.Modal(document.getElementById('characterModal'), {});
-            myModal.show();
+            var json = JSON.parse(xhttp.responseText);
+            var character = json[id];
+            createModal(character);
         }
     };
     xhttp.open("GET", "/api/character/", true);
     xhttp.send();
 }
 
+function createModal(character) {
+    var modal = document.createElement('div');
+    modal.setAttribute('class', 'modal fade');
+    modal.setAttribute('id', 'characterModal');
+    modal.setAttribute('tabindex', '-1');
+    modal.setAttribute('aria-labelledby', 'characterModalLabel');
+    modal.setAttribute('aria-hidden', 'true');
+    modal.innerHTML = `
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="characterModalLabel">${character.name}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ${character.desc}
+                </div>
+            </div>
+        </div>
+    `;
+    document.querySelector('.container').appendChild(modal);
+
+    var myModal = new bootstrap.Modal(document.getElementById('characterModal'), {});
+    myModal.show();
+
+    document.getElementById('characterModal').addEventListener('hidden.bs.modal', function () {
+        this.remove();
+    });
+}
 
 function createButtons() {
     var xhttp = new XMLHttpRequest();
