@@ -46,41 +46,6 @@ function createModal(character) {
     });
 }
 
-function createButtons() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (xhttp.readyState === 4 && xhttp.status === 200) {
-            var json = JSON.parse(xhttp.responseText);
-            var row = document.createElement("div");
-            document.querySelector('.container').appendChild(row);
-            row.setAttribute("class", "row");
-            for (var i = 0; i < json.length; i++) {
-                var c = 0;
-
-                
-                var card = document.createElement("div");
-                var img = document.createElement("img");
-            
-                document.querySelector('.row').appendChild(card);
-                card.setAttribute("class", "card");
-                card.setAttribute("style", "width: 18rem;");
-                
-                img.setAttribute("class", "card-img-top");
-                img.setAttribute("src", json[i].image);
-                
-                card.textContent = json[i].name;
-                
-                
-                card.appendChild(img);
-                card.setAttribute("onclick", `handleButtonClick(${i})`);
-            }
-            
-        }
-    };
-    xhttp.open("GET", "/api/character", true);
-    xhttp.send();
-}
-
 //Filters Section
 function updateCharacterCards(filter) {
     var xhttp = new XMLHttpRequest();
