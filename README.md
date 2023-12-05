@@ -7,5 +7,6 @@
 ### Team members that contributed to the project and what each team member contributed:
 - Will Bohlke - Consistent CSS, Cards, and Content Page
 - KB Brown - Filters API and UI
+- Evan Brantley - Favorites API and UI
 
 ### Special mentions for external contributors to the project (if applicable):

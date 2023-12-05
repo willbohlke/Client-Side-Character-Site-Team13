@@ -101,23 +101,48 @@ function updateCharacterCards(filter) {
     xhttp.send();
 }
 
-function createCard(character) {
+function createCard(character) {  // Evan modified the createCard function a little bit to include the heart icon for the favorites button
     var card = document.createElement("div");
     var img = document.createElement("img");
+    
 
     card.setAttribute("class", "card");
-    card.setAttribute("style", "width: 18rem;");
+    card.setAttribute("style", "width: 18rem; position: relative;");
     
     img.setAttribute("class", "card-img-top");
     img.setAttribute("src", character.image);
 
-    card.textContent = character.name;
+    //section for heart icon
+    var heartIcon = document.createElement("img");
+    heartIcon.setAttribute("src", "/heart-fill.svg");
+    heartIcon.setAttribute("class", "favorite-heart");
+    if (localStorage.getItem('favorite-' + character.id) === 'true') {
+        heartIcon.classList.add('is-favorite');
+    }
+    heartIcon.style.position = "absolute";
+    heartIcon.style.bottom = "10px";
+    heartIcon.style.right = "10px";
+    heartIcon.style.width = "30px"; 
+    heartIcon.style.height = "30px"; 
+    heartIcon.style.cursor = "pointer";
+    heartIcon.onclick = function(event) {
+        event.stopPropagation();
+        toggleFavorite(character.id, heartIcon);
+    };;
+
+    var textContainer = document.createElement("div");
+    textContainer.textContent = character.name;
+    textContainer.setAttribute("class", "card-body"); 
 
     card.appendChild(img);
+    card.appendChild(textContainer); 
+    card.appendChild(heartIcon); 
+
     card.setAttribute("onclick", `handleButtonClick(${character.id})`);
 
     return card;
 }
+
 
 function createButtons() {
     var xhttp = new XMLHttpRequest();
@@ -135,4 +160,16 @@ function createButtons() {
 
     xhttp.open("GET", "/api/character", true);
     xhttp.send();
+}
+
+//Evan's toggle favorites function
+function toggleFavorite(characterId, heartIcon) {
+    var isFavorite = heartIcon.classList.contains('is-favorite');
+    if (isFavorite) {
+        localStorage.setItem('favorite-' + characterId, 'false');
+        heartIcon.classList.remove('is-favorite');
+    } else {
+        localStorage.setItem('favorite-' + characterId, 'true');
+        heartIcon.classList.add('is-favorite');
+    }
 }

@@ -19,17 +19,9 @@ router.get('/character/:id', function(req, res, next) {
     res.send(json);
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
+router.post('/toggle-favorite/:id', function(req, res) {
+    const isFavorite = appController.toggleFavorite(req.params.id);
+    res.json({ isFavorite: isFavorite });
+});
 
 module.exports = router;

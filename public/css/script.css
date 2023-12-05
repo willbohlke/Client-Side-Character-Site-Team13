@@ -12,3 +12,14 @@
     margin: 20 auto;
 
 }
+
+.favorite-heart.is-favorite {
+    filter: brightness(0) saturate(100%) invert(20%) sepia(100%) saturate(6000%) hue-rotate(345deg) brightness(100%) contrast(100%);
+}
+
+.favorite-heart {
+    filter: brightness(0) saturate(100%) invert(67%) sepia(92%) saturate(309%) hue-rotate(2deg) brightness(103%) contrast(101%);
+}
+
+
+
