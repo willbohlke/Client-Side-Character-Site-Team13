@@ -95,10 +95,10 @@ function createCard(character) {  // Evan modified the createCard function a lit
         heartIcon.classList.add('is-favorite');
     }
     heartIcon.style.position = "absolute";
-    heartIcon.style.bottom = "10px";
+    heartIcon.style.top = "10px";
     heartIcon.style.right = "10px";
-    heartIcon.style.width = "30px"; 
-    heartIcon.style.height = "30px"; 
+    heartIcon.style.width = "20px"; 
+    heartIcon.style.height = "20px"; 
     heartIcon.style.cursor = "pointer";
     heartIcon.onclick = function(event) {
         event.stopPropagation();
