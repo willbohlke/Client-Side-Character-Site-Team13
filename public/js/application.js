@@ -52,7 +52,11 @@ function updateCharacterCards(filter) {
 
             for (var i = 0; i < json.length; i++) {
                 // Apply filtering logic based on the selected filter
-                if (filter === 'all' || json[i].universe === filter) {
+                if (filter === 'all' ||
+                    (filter === 'universe1' && json[i].Universe === 1) ||
+                    (filter === 'universe2' && json[i].Universe === 2) ||
+                    (filter === 'universe3' && json[i].Universe === 3) ||
+                    (filter === 'favorites' && localStorage.getItem('favorite-' + json[i].id) === 'true')) {
                     var card = createCard(json[i]);
                     characterCards.appendChild(card);
                 }
@@ -62,6 +66,11 @@ function updateCharacterCards(filter) {
 
     xhttp.open("GET", "/api/character", true);
     xhttp.send();
+}
+function handleFilterChange() {
+    var filterSelect = document.getElementById('filter');
+    var selectedFilter = filterSelect.value;
+    updateCharacterCards(selectedFilter);
 }
 
 function createCard(character) {  // Evan modified the createCard function a little bit to include the heart icon for the favorites button

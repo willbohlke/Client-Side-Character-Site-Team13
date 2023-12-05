@@ -1,11 +1,12 @@
 [
-    {"id": 0, "url": "/spongebob", "name": "SpongeBob SquarePants", "desc": "SpongeBob is the main character of the show. He has a very child-like personality.", "image":"/sponge.png"},
-    {"id": 1, "url": "/patrick", "name": "Patrick Star", "desc": "Patrick is the comic relief character of the show. He is SpongeBob's best friend.", "image":"/pat.png"},
-    {"id": 2, "url": "/squidward", "name": "Squidward Tentacles", "desc": "Squidward is the foil for Spongebob. He is very pessimistic by comparison.", "image":"/squid.png"},
-    {"id": 3, "url": "/Peter", "name": "SpiderMan (Peter)", "desc": "Peter Parker, also known as Spider-Man, is a young, brilliant scientist and photographer from New York City. After being bitten by a radioactive spider, he gained incredible superpower.", "image":"/Peter.jpg"},
-    {"id": 4, "url": "/Miles", "name": "SpiderMan (Miles)", "desc": "Miles Morales is another Spider-Man from New York City. He possesses powers similar to Peter Parker's, having been bitten by a genetically-altered spider.", "image":"/Miles.jpg"},
-    {"id": 5, "url": "/Venom", "name": "Venom", "desc": "Venom is an alien. The symbiote grants superhuman strength, agility, and the ability to generate web-like tendrils. However, it often influences its host's behavior, resulting in an anti-hero or villainous persona.", "image":"/venom.jpg"},
-    {"id": 6, "url": "/pyke", "name": "Pyke", "desc": "A renowned harpooner from the slaughter docks of Bilgewater, Pyke should have met his death in the belly of a gigantic jaull-fish… and yet, he returned.", "image":"/pyke.jpg"},
-    {"id": 7, "url": "/sylas", "name": "Sylas", "desc": "Raised in one of Demacia’s lesser quarters, Sylas of Dregbourne has come to symbolize the darker side of the Great City.", "image":"/sylas.jpg"},
-    {"id": 8, "url": "/qiyana", "name": "Qiyana", "desc": "In the jungle city of Ixaocan, Qiyana plots her own ruthless path to the high seat of the Yun Tal.", "image":"/qiyana.jpg"}
+    {"id": 0, "Universe": 1, "url": "/spongebob", "name": "SpongeBob SquarePants", "desc": "SpongeBob is the main character of the show. He has a very child-like personality.", "image":"/sponge.png"},
+    {"id": 1, "Universe": 1,"url": "/patrick", "name": "Patrick Star", "desc": "Patrick is the comic relief character of the show. He is SpongeBob's best friend.", "image":"/pat.png"},
+    {"id": 2, "Universe": 1,"url": "/squidward", "name": "Squidward Tentacles", "desc": "Squidward is the foil for Spongebob. He is very pessimistic by comparison.", "image":"/squid.png"},
+    {"id": 3, "Universe": 2,"url": "/Peter", "name": "SpiderMan (Peter)", "desc": "Peter Parker, also known as Spider-Man, is a young, brilliant scientist and photographer from New York City. After being bitten by a radioactive spider, he gained incredible superpower.", "image":"/Peter.jpg"},
+    {"id": 4, "Universe": 2,"url": "/Miles", "name": "SpiderMan (Miles)", "desc": "Miles Morales is another Spider-Man from New York City. He possesses powers similar to Peter Parker's, having been bitten by a genetically-altered spider.", "image":"/Miles.jpg"},
+    {"id": 5, "Universe": 2,"url": "/Venom", "name": "Venom", "desc": "Venom is an alien. The symbiote grants superhuman strength, agility, and the ability to generate web-like tendrils. However, it often influences its host's behavior, resulting in an anti-hero or villainous persona.", "image":"/venom.jpg"},
+    {"id": 6, "Universe": 3,"url": "/pyke", "name": "Pyke", "desc": "A renowned harpooner from the slaughter docks of Bilgewater, Pyke should have met his death in the belly of a gigantic jaull-fish… and yet, he returned.", "image":"/pyke.jpg"},
+    {"id": 7, "Universe": 3,"url": "/sylas", "name": "Sylas", "desc": "Raised in one of Demacia’s lesser quarters, Sylas of Dregbourne has come to symbolize the darker side of the Great City.", "image":"/sylas.jpg"},
+    {"id": 8, "Universe": 3,"url": "/qiyana", "name": "Qiyana", "desc": "In the jungle city of Ixaocan, Qiyana plots her own ruthless path to the high seat of the Yun Tal.", "image":"/qiyana.jpg"}
+
 ]

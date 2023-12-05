@@ -20,22 +20,16 @@
 <body>
     <div class="container">
         <div class="filters">
-            <label>
-                <input type="radio" name="filter" value="all" checked>
-                All Characters
-            </label>
-            <label>
-                <input type="radio" name="filter" value="universe1">
-                Universe 1 (William) Characters
-            </label>
-            <label>
-                <input type="radio" name="filter" value="universe2">
-                Universe 2 (KB) Characters
-            </label>
-            <label>
-                <input type="radio" name="filter" value="universe3">
-                Universe 3 (Evan) Characters
-            </label>
+            <div>
+                <label for="filter">Filter by:</label>
+                <select id="filter" onchange="handleFilterChange()">
+                    <option value="all">All characters</option>
+                    <option value="universe1">Characters from Universe 1</option>
+                    <option value="universe2">Characters from Universe 2</option>
+                    <option value="universe3">Characters from Universe 3</option>
+                    <option value="favorites">Favorite characters</option>
+                </select>
+            </div>
         </div>
         <div class="row" id="characterCards"></div>
     </div>
